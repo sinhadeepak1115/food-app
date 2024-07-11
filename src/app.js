@@ -6,7 +6,7 @@ const mongoose=require('mongoose');
 const session=require('express-session');
 const fileUpload = require('express-fileupload');
 const { handlebars } = require('hbs');
-require("./handlebar")//this hbs user made handlebars
+require("./handlebar")
 const app=express();
 app.use(fileUpload())
 app.use(session({
