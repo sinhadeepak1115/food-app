@@ -31,7 +31,7 @@ hbs.registerPartials('views/partials')
 
 
 
-mongoose.connect("mongodb+srv://admin:WW735cmxce@cluster0.e9opud3.mongodb.net/",()=>{
+mongoose.connect("",()=>{
     console.log("Server connected..");
 })
 app.listen(5656,()=>{
