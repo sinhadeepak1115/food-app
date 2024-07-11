@@ -102,7 +102,8 @@ route.get("/admin/addDish", (req, res) => {
                 loginUser: loginUser
             })
         } else {
-            res.send(`<h1>Something Wrong !!</h1> <h2>Opps! you can not acess this page..</h2>`)
+            res.send(`<h1>can't add dish
+            Something Wrong !!</h1> <h2>Opps! you can not acess this page..</h2>`)
         }
     } else
         res.render("login", {
@@ -162,11 +163,11 @@ route.post('/saveDish', async (req, res) => {
         return;
     }
     const { photo } = req.files;
-    const imageName=Math.random()+photo.name;
+    const imageName=photo.name;
     req.body.photo = imageName;
     const data = await dish.create(req.body)
 
-    photo.mv("D:/document/projects/Restorent/public/dishImage/" + imageName);
+    photo.mv("D:/dish/" + imageName);
     if (data) {
         console.log("dish save")
         res.render("addNewDish", {

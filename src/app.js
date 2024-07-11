@@ -10,7 +10,9 @@ require("./handlebar")//this hbs user made handlebars
 const app=express();
 app.use(fileUpload())
 app.use(session({
-    secret:"restorent_datails"
+    secret:"restorent_datails",
+    resave: false,
+    saveUninitialized: true,
 }))
 app.use(bodyParser.urlencoded({
     extended:true
@@ -29,7 +31,7 @@ hbs.registerPartials('views/partials')
 
 
 
-mongoose.connect("mongodb://localhost/restorent",()=>{
+mongoose.connect("mongodb+srv://admin:WW735cmxce@cluster0.e9opud3.mongodb.net/",()=>{
     console.log("Server connected..");
 })
 app.listen(5656,()=>{
